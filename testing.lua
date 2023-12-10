@@ -43,9 +43,6 @@ Tab:AddButton({
 	Name = "Check Key!",
 	Callback = function()
       		if G.KeyInput == G.Key then
-                Destroy()
-                local Window = OrionLib:MakeWindow({Name = "Works!!", HidePremium = false, SaveConfig = true, IntroEnabled = false})
-                local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
                 valid()
             else
                 invalid()
