@@ -1,8 +1,12 @@
 local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/dnil0001/mainUI/main/mainuilib.lua'))()
 local Flags = Library.Flags
 
+function myTest()
+    print("Working!!!!!!!!!!!!!")
+end
+
 local Window = Library:Window({
-    Text = "Syntax"
+    Text = "Baseplate"
 })
 
 local Tab = Window:Tab({
@@ -31,19 +35,15 @@ local Section3 = Tab:Section({
 })
 
 ChamsSection:Toggle({
-    Text = "Enabled",
-    print("Works")
+    Text = "Enabled"
 })
 
 ChamsSection:Toggle({
-    Text = "Color",
-    print("Works"),
-    myprint()
+    Text = "Color"
 })
 
 ChamsSection:Toggle({
-    Text = "Filled",
-    print("Works")
+    Text = "Filled"
 })
 
 ChamsSection:Toggle({
@@ -55,19 +55,27 @@ Section:Toggle({
 })
 
 Section:Toggle({
-    Text = "Wall Check"
+Text = "Wall Check",
+Callback = function()
+print("button pressed")
 })
 
 Section:Toggle({
-    Text = "Smooth Aimbot"
+    Text = "Smooth Aimbot",
+    Callback = function()
+        print("button pressed")
 })
 
 Section2:Toggle({
-    Text = "Enabled"
+    Text = "Enabled",
+    Callback = function()
+        print("button pressed")
 })
 
 Section2:Toggle({
-    Text = "Filled FOV"
+    Text = "Filled FOV",
+    Callback = function()
+        print("button pressed")
 })
 
 Section2:Toggle({
@@ -108,10 +116,11 @@ local label = Section3:Label({
 })
 
 local dropdown = Section:Dropdown({
-    Text = "ESP",
-    List = {"Red","Blue"},
+    Text = "Dropdown",
+    List = {"Head","Torso","Random"},
     Flag = "Choosen",
-    Callback = function()
+    Callback = function(v)
+        warn(v)
     end
 })
 
@@ -164,7 +173,3 @@ label:Set({
 })
 
 a:Set(true)
-
-function myprint()
-    print("Hii")
-end
