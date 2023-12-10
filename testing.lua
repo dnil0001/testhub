@@ -65,7 +65,6 @@ end
 Section:Toggle({
     Text = "Smooth Aimbot",
     Callback = function()
-        print("button pressed")
         myTest()
     end
 })
@@ -73,7 +72,6 @@ Section:Toggle({
 Section2:Toggle({
     Text = "Enabled",
     Callback = function()
-        print("button pressed")
         myTest()
     end
 })
