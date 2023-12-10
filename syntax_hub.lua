@@ -1,5 +1,5 @@
 --check game func
-if game.PlaceId == 155615604 then
+-- if game.PlaceId == 155615604 then --computer ONLY
     local CurrentVerison = "string text"
     --create lib
   local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
