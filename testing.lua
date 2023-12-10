@@ -1,5 +1,6 @@
 local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/dnil0001/mainUI/main/mainuilib.lua'))()
 local Flags = Library.Flags
+print("im part of the kkk niggers")
 
 function myTest()
     print("Working!!!!!!!!!!!!!")
@@ -64,9 +65,7 @@ end
 
 Section:Toggle({
     Text = "Smooth Aimbot",
-    Callback = function()
-        myTest()
-    end
+    Callback = myTest()
 })
 
 Section2:Toggle({
