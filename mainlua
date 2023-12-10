@@ -217,8 +217,6 @@ local Services = setmetatable({}, {__index = function(Self, Index)
         GunInfo.CurrentAmmo = math.huge
         GunInfo.ReloadTime = 0
         print("Works!")
-      else
-        print("doesn't work..")
     end)
 
     Window:Button("Guns", "Gives user all guns", function ()
