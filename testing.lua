@@ -1,5 +1,6 @@
 local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/dnil0001/mainUI/main/mainuilib.lua'))()
 local Flags = Library.Flags
+print("scukmycockniggar")
 
 function myTest()
     print("Working!!!!!!!!!!!!!")
@@ -58,24 +59,28 @@ Section:Toggle({
 Text = "Wall Check",
 Callback = function()
 print("button pressed")
+end
 })
 
 Section:Toggle({
     Text = "Smooth Aimbot",
     Callback = function()
         print("button pressed")
+    end
 })
 
 Section2:Toggle({
     Text = "Enabled",
     Callback = function()
         print("button pressed")
+    end
 })
 
 Section2:Toggle({
     Text = "Filled FOV",
     Callback = function()
         print("button pressed")
+    end
 })
 
 Section2:Toggle({
