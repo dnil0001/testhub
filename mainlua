@@ -1,3 +1,4 @@
+--https://www.youtube.com/c/anto6666 
 -- // Constants \\ --
 -- [ Services ] --
 local Services = setmetatable({}, {__index = function(Self, Index)
@@ -38,8 +39,8 @@ local Services = setmetatable({}, {__index = function(Self, Index)
     
     -- [ Interface ] --
     local FOVCircle = Drawing.new("Circle", {
-       Thickness = 2.5,
-       Color = Color3.fromRGB(0, 0, 0), --       Color = Color3.fromRGB(200, 200, 200)
+       Thickness = 1.0,
+       Color = Color3.fromRGB(), --       Color = Color3.fromRGB(200, 200, 200)
        NumSides = 25,
        Radius = _G.FOV
     })
@@ -209,13 +210,29 @@ local Services = setmetatable({}, {__index = function(Self, Index)
     --Other ammo, teleport
     Window:Divider("Other")
 
-    Window:Button("Ammo", "Gives user infinite ammo", function ()
+    Window:Button("Ammo", "Gives user infinite ammo", function () --FIX THIS ENTIRE PART
         local GunStates = LocalPlayer.Character:FindFirstChild("GunStates", true)
         GunInfo.StoredAmmo = math.huge
         GunInfo.MaxAmmo = math.huge
         GunInfo.CurrentAmmo = math.huge
         GunInfo.ReloadTime = 0
         print("Works!")
+      else
+        print("doesn't work..")
+    end)
+
+    Window:Button("Guns", "Gives user all guns", function ()
+        workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
+        workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M4A1"].ITEMPICKUP)
+        workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["AK-47"].ITEMPICKUP)
+        workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M9"].ITEMPICKUP)
+        print("Guns work!")
+    end)
+
+    Window:Button("2Cat", "Gives user M4A1, and shotgun", function ()
+        workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M4A1"].ITEMPICKUP)
+        workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
+        print("2Cat works!")
     end)
 
     -- [ Rage ] --
@@ -280,6 +297,8 @@ local Services = setmetatable({}, {__index = function(Self, Index)
        end
     end)
     
+
+
     -- [ Miscellaneous ] --
     Window:Divider("Miscellaneous")
     
