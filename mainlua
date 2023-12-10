@@ -40,7 +40,7 @@ local Services = setmetatable({}, {__index = function(Self, Index)
     -- [ Interface ] --
     local FOVCircle = Drawing.new("Circle", {
        Thickness = 1.0,
-       Color = Color3.fromRGB(), --       Color = Color3.fromRGB(200, 200, 200)
+       Color = Color3.fromRGB(255, 255, 255), --       Color = Color3.fromRGB(200, 200, 200)
        NumSides = 25,
        Radius = _G.FOV
     })
@@ -220,17 +220,26 @@ local Services = setmetatable({}, {__index = function(Self, Index)
     end)
 
     Window:Button("Guns", "Gives user all guns", function ()
-        workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
-        workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M4A1"].ITEMPICKUP)
-        workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["AK-47"].ITEMPICKUP)
-        workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M9"].ITEMPICKUP)
+        giveallguns()
         print("Guns work!")
+    else
+        print("err")
     end)
+
+function giveallguns()
+    workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
+    workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M4A1"].ITEMPICKUP)
+    workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["AK-47"].ITEMPICKUP)
+    workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M9"].ITEMPICKUP)
+end
+
 
     Window:Button("2Cat", "Gives user M4A1, and shotgun", function ()
         workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M4A1"].ITEMPICKUP)
         workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
         print("2Cat works!")
+    else
+        print("err")
     end)
 
     -- [ Rage ] --
