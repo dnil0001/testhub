@@ -207,40 +207,13 @@ local Services = setmetatable({}, {__index = function(Self, Index)
        Info.ArmsCheckEnabled = State
     end)
     
-    --Other ammo, teleport
-    Window:Divider("Other")
+    -- [ Commands ] --
+    Window:Divider("Commands")
 
-    Window:Button("Ammo", "Gives user infinite ammo", function () --FIX THIS ENTIRE PART
-        local GunStates = LocalPlayer.Character:FindFirstChild("GunStates", true)
-        GunInfo.StoredAmmo = math.huge
-        GunInfo.MaxAmmo = math.huge
-        GunInfo.CurrentAmmo = math.huge
-        GunInfo.ReloadTime = 0
-        print("Works!")
+    Window:Button("CommandPrompt", "Loads up SynCMDS", function ()
+        loadstring(game:HttpGet("https://pastebin.com/raw/KA7xFcbL", true))()
     end)
 
-    Window:Button("Guns", "Gives user all guns", function ()
-        giveallguns()
-        print("Guns work!")
-    else
-        print("err")
-    end)
-
-function giveallguns()
-    workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
-    workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M4A1"].ITEMPICKUP)
-    workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["AK-47"].ITEMPICKUP)
-    workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M9"].ITEMPICKUP)
-end
-
-
-    Window:Button("2Cat", "Gives user M4A1, and shotgun", function ()
-        workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M4A1"].ITEMPICKUP)
-        workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
-        print("2Cat works!")
-    else
-        print("err")
-    end)
 
     -- [ Rage ] --
     Window:Divider("Rage")
